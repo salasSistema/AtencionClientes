@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+        return view('home');
+    });
 Route::group(['prefix' => 'api'], function () {
     //Estas ruta nos permite acceder al controlador BarrioController, a la funcion index
     Route::get('/barrios', [BarrioController::class, 'index']);//name sirve para asignar nombres a las rutas y facilitar su uso en las vistas y en el manejo de redirecciones. 
@@ -26,4 +29,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('/provincias', [ProvinciaController::class, 'index'])->name('provincias.index');
     Route::get('/tipo_inmueble', [Tipo_inmuebleController::class, 'index'])->name('tipo_inmueble.index');
     Route::get('/zona', [ZonaController::class, 'index'])->name('zona.index');
+
+
+    
+    
 });
